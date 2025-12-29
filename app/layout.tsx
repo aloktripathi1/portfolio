@@ -4,6 +4,12 @@ import { NoiseOverlay } from '@/components/ui/NoiseOverlay';
 import { ScrollGradient } from '@/components/ui/ScrollGradient';
 import { ConsoleEasterEgg } from '@/components/ui/ConsoleEasterEgg';
 import type { Metadata } from 'next';
+import { Geist_Mono } from 'next/font/google';
+
+const geistMono = Geist_Mono({
+    subsets: ['latin'],
+    variable: '--font-primary',
+});
 
 export const metadata: Metadata = {
     title: 'Alok K. Tripathi - Data Scientist',
@@ -17,7 +23,7 @@ export default function RootLayout({
 }) {
     return (
         <html lang="en">
-            <body>
+            <body className={geistMono.variable}>
                 <ConsoleEasterEgg />
                 <SmoothScroll>
                     <NoiseOverlay />
